@@ -11,6 +11,6 @@ while True:
     prompt = input("\nInput: ")
     input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
 
-    generated_ids = model.generate(input_ids, do_sample=True, temperature=0.9, max_length=20, pad_token_id=50256)
+    generated_ids = model.generate(input_ids, do_sample=True, temperature=0.9, max_length=100, pad_token_id=50256)
     generated_text = tokenizer.decode(generated_ids[0])
     print("\nOutput: " + generated_text)
